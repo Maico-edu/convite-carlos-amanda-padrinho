@@ -1,0 +1,64 @@
+:root {
+  --ivory: #faf6ec;
+  --ivory-deep: #f1e9d6;
+  --white: #fffefa;
+  --gold: #b8923f;
+  --gold-light: #d9bd78;
+  --gold-dark: #8a6a24;
+  --ink: #5b4a2c;
+  --script: 'Great Vibes', cursive;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at top, #fffdf6 0%, var(--ivory) 55%, var(--ivory-deep) 100%);
+  background-attachment: fixed;
+}
+
+#app {
+  min-height: 100dvh;
+}
+
+button {
+  font: inherit;
+}
+
+/* Transição entre as duas telas */
+.screen-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.screen-enter-active {
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.screen-enter-from {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+}
+.screen-leave-to {
+  opacity: 0;
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
